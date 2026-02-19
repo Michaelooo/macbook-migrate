@@ -1,0 +1,130 @@
+import { defineConfig } from 'vitepress'
+
+export default defineConfig({
+  title: 'macOS 开发环境迁移指南',
+  description: '系统化、可复现的 macOS 开发环境迁移解决方案',
+  lang: 'zh-CN',
+  base: '/macos-migrate/',
+  head: [
+    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
+    ['link', {
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=JetBrains+Mono:wght@400;500;600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap'
+    }],
+    ['meta', { name: 'theme-color', content: '#f8f6f3' }],
+    ['meta', { name: 'og:type', content: 'website' }],
+    ['meta', { name: 'og:locale', content: 'zh_CN' }]
+  ],
+
+  themeConfig: {
+    nav: [
+      { text: '首页', link: '/' },
+      { text: '快速开始', link: '/quick-start' },
+      { text: '官方工具', link: '/official-tools' },
+      { text: '脚本', link: '/scripts' }
+    ],
+
+    sidebar: [
+      {
+        text: '开始使用',
+        items: [
+          { text: '概述', link: '/' },
+          { text: '快速开始', link: '/quick-start' }
+        ]
+      },
+      {
+        text: '迁移方法',
+        items: [
+          { text: '官方迁移工具', link: '/official-tools' },
+          { text: '迁移策略选择', link: '/strategies' }
+        ]
+      },
+      {
+        text: '开发环境',
+        items: [
+          { text: 'Homebrew', link: '/dev-env/homebrew' },
+          { text: 'Node.js / nvm', link: '/dev-env/nodejs' },
+          { text: 'Python / pyenv', link: '/dev-env/python' },
+          { text: '全局包管理', link: '/dev-env/global-packages' }
+        ]
+      },
+      {
+        text: '配置与数据',
+        items: [
+          { text: '配置文件备份', link: '/config/dotfiles' },
+          { text: 'VS Code 设置', link: '/config/vscode' },
+          { text: '数据迁移清单', link: '/config/data-checklist' }
+        ]
+      },
+      {
+        text: '自动化脚本',
+        items: [
+          { text: '备份脚本', link: '/scripts' },
+          { text: '恢复脚本', link: '/scripts#恢复脚本' }
+        ]
+      },
+      {
+        text: '收尾工作',
+        items: [
+          { text: '迁移后检查', link: '/post-migration/checklist' },
+          { text: '实用技巧', link: '/post-migration/tips' }
+        ]
+      }
+    ],
+
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/yourusername/macos-migrate' }
+    ],
+
+    footer: {
+      message: '基于 MIT 许可发布',
+      copyright: '© 2024-present macOS Migrate Guide'
+    },
+
+    search: {
+      provider: 'local',
+      options: {
+        locales: {
+          zh: {
+            translations: {
+              button: '搜索文档',
+              placeholder: '搜索文档...'
+            }
+          }
+        }
+      }
+    },
+
+    outline: {
+      level: [2, 3],
+      label: '页面导航'
+    },
+
+    docFooter: {
+      prev: '上一页',
+      next: '下一页'
+    },
+
+    returnToTopLabel: '返回顶部',
+    sidebarMenuLabel: '菜单',
+    darkModeSwitchLabel: '外观',
+    lightModeSwitchTitle: '浅色',
+    darkModeSwitchTitle: '深色'
+  },
+
+  markdown: {
+    lineNumbers: true,
+    codeTransformers: []
+  },
+
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@use "@theme/styles/variables" as *;`
+        }
+      }
+    }
+  }
+})

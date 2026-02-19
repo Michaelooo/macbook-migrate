@@ -1,0 +1,24 @@
+{
+  "name": "macos-migrate-guide",
+  "version": "1.0.0",
+  "description": "macOS 开发环境迁移指南 - 现代化文档网站",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
+    "type-check": "vue-tsc --noEmit"
+  },
+  "keywords": ["macos", "migration", "development", "guide", "documentation"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "vue": "^3.4.21",
+    "vue-tsc": "^1.8.27",
+    "vitepress": "^1.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
