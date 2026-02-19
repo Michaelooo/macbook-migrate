@@ -9,14 +9,21 @@
     "preview": "vitepress preview docs",
     "type-check": "vue-tsc --noEmit"
   },
-  "keywords": ["macos", "migration", "development", "guide", "documentation"],
+  "keywords": [
+    "macos",
+    "migration",
+    "development",
+    "guide",
+    "documentation"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.11.5",
+    "vitepress": "^1.0.1",
+    "vitepress-plugin-mermaid": "^2.0.17",
     "vue": "^3.4.21",
-    "vue-tsc": "^1.8.27",
-    "vitepress": "^1.0.1"
+    "vue-tsc": "^1.8.27"
   },
   "engines": {
     "node": ">=18.0.0"

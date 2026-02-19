@@ -728,3 +728,106 @@ input[type="checkbox"] {
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================
+   MERMAID DIAGRAMS
+   ============================================ */
+
+/* Mermaid diagram container */
+.mermaid {
+  margin: var(--spacing-lg) 0;
+  background: var(--c-bg-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+/* Mermaid SVG styling */
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Flowchart node styles */
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node ellipse,
+.mermaid .node polygon {
+  fill: var(--c-accent-soft);
+  stroke: var(--c-accent);
+  stroke-width: 2px;
+}
+
+.mermaid .node .label {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--c-text-primary);
+}
+
+/* Edge/line styles */
+.mermaid .edgePath .path {
+  stroke: var(--c-accent);
+  stroke-width: 2px;
+}
+
+.mermaid .edgeLabel {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--c-text-secondary);
+  background: var(--c-bg-primary);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+}
+
+/* Cluster/subgraph styles */
+.mermaid .cluster rect {
+  fill: var(--c-bg-soft);
+  stroke: var(--c-border);
+  stroke-width: 1px;
+  stroke-dasharray: 5 5;
+}
+
+/* Decision diamond */
+.mermaid .decision polygon {
+  fill: var(--c-bg-soft);
+  stroke: var(--sh-c-number);
+}
+
+/* Terminal nodes */
+.mermaid .terminal rect,
+.mermaid .terminal circle {
+  fill: var(--c-accent);
+  stroke: var(--c-accent);
+}
+
+.mermaid .terminal .label {
+  color: var(--c-bg-primary);
+  font-weight: 600;
+}
+
+/* Dark mode overrides */
+.dark .mermaid .node rect,
+.dark .mermaid .node circle,
+.dark .mermaid .node ellipse,
+.dark .mermaid .node polygon {
+  fill: var(--c-accent-soft);
+  stroke: var(--c-accent);
+}
+
+.dark .mermaid .cluster rect {
+  fill: var(--c-bg-soft);
+  stroke: var(--c-border);
+}
+
+/* Responsive mermaid */
+@media (max-width: 768px) {
+  .mermaid {
+    padding: var(--spacing-sm);
+    font-size: 0.85rem;
+  }
+
+  .mermaid .node .label {
+    font-size: 0.8rem;
+  }
+}

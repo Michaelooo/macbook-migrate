@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 
-export default defineConfig({
+export default withMermaid({
   title: 'macOS 开发环境迁移指南',
   description: '系统化、可复现的 macOS 开发环境迁移解决方案',
   lang: 'zh-CN',
@@ -114,8 +115,44 @@ export default defineConfig({
   },
 
   markdown: {
-    lineNumbers: true,
-    codeTransformers: []
+    lineNumbers: true
+  },
+
+  // Mermaid 插件配置
+  mermaidPlugin: {
+    startOnLoad: false
+  },
+
+  mermaid: {
+    theme: 'neutral',
+    themeVariables: {
+      dark: {
+        primaryColor: '#2d2b28',
+        primaryTextColor: '#f5f3f0',
+        primaryBorderColor: '#7fc9a8',
+        lineColor: '#7fc9a8',
+        secondaryColor: '#1f3d2e',
+        tertiaryColor: '#3a3835',
+        background: '#1a1917',
+        mainBkg: '#242220',
+        nodeBorder: '#7fc9a8',
+        clusterBkg: '#1f3d2e',
+        clusterBorder: '#7fc9a8'
+      },
+      light: {
+        primaryColor: '#f8f6f3',
+        primaryTextColor: '#2d2a26',
+        primaryBorderColor: '#1a5f3f',
+        lineColor: '#1a5f3f',
+        secondaryColor: '#e8f0ea',
+        tertiaryColor: '#f0ede8',
+        background: '#ffffff',
+        mainBkg: '#f8f6f3',
+        nodeBorder: '#1a5f3f',
+        clusterBkg: '#e8f0ea',
+        clusterBorder: '#1a5f3f'
+      }
+    }
   },
 
   vite: {
