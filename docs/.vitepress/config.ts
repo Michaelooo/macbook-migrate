@@ -163,17 +163,10 @@ export default withMermaid({
   },
 
   vite: {
-    // 优化构建配置
+    // GitHub Pages 部署到子目录需要配置 base
+    base: '/macos-migrate/',
     build: {
       cssCodeSplit: false
-    },
-    css: {
-      preprocessorOptions: {
-        scss: {
-          // 移除可能导致问题的 SCSS 导入
-          // additionalData: `@use "@theme/styles/variables" as *;`
-        }
-      }
     }
   }
 })
