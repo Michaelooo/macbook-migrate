@@ -12,6 +12,7 @@
 - **响应式** - 完美支持桌面和移动设备
 - **深色模式** - 内置深浅色主题切换
 - **轻量化** - 快速构建，优化加载速度
+- **字体优化** - 即使 Google Fonts 被屏蔽也能正常显示
 
 ## 在线预览
 
@@ -85,13 +86,75 @@ npm run preview
    - 等待部署完成（约 1-2 分钟）
    - 访问 `https://your-username.github.io/macos-migrate/`
 
-### 修改自定义域名
+### 使用自定义域名
 
-如果要使用自定义域名，修改 `docs/.vitepress/config.ts` 中的 `base` 配置：
+1. **修改配置**
 
-```typescript
-base: '/', // 自定义域名使用根路径
-```
+   将 `docs/.vitepress/config.ts` 中的 `base` 改为根路径：
+   ```typescript
+   base: '/', // 自定义域名使用根路径
+   ```
+
+2. **创建 CNAME 文件**
+   ```bash   # 取消注释并修改 CNAME.example
+   mv CNAME.example CNAME
+
+   # 编辑 CNAME 文件，填入你的域名
+   # 例如：yourdomain.com 或 www.yourdomain.com
+   ```
+
+3. **更新 DNS**
+   - 在你的域名提供商添加 DNS 记录
+   - 类型：CNAME
+   - 主机记录：@ 或 www
+   - 目标：`your-username.github.io`
+
+## 常见问题排查
+
+### CSS/字体无法加载
+
+**问题**：部署后样式显示异常，字体没有加载
+
+**解决方案**：
+
+1. **检查 base 路径配置**
+   - 确认 `docs/.vitepress/config.ts` 中的 `base` 配置正确
+   - GitHub Pages 项目：`base: '/macos-migrate/'`
+   - 自定义域名：`base: '/'`
+
+2. **字体已配置降级策略**
+   - 即使 Google Fonts 无法访问，会自动使用系统字体
+   - 中文字体：`Songti SC`、`PingFang SC`、`Microsoft YaHei`
+   - 等宽字体：`SF Mono`、`Menlo`、`Monaco`
+
+3. **清除浏览器缓存**
+   - 按 `Cmd+Shift+R` (Mac) 或 `Ctrl+Shift+R` (Windows)
+   - 或打开开发者工具，勾选 "Disable cache"
+
+### 图片资源无法加载
+
+**解决方案**：
+
+1. 确保图片路径使用相对路径
+2. 避免使用绝对路径（如 `/images/logo.png`）
+3. 使用相对路径（如 `./images/logo.png`）
+
+### Mermaid 图表不显示
+
+**解决方案**：
+
+1. 检查浏览器控制台是否有 JavaScript 错误
+2. 确认 `vitepress-plugin-mermaid` 插件已安装
+3. 重新构建并推送代码
+
+### 部署后 404 错误
+
+**解决方案**：
+
+1. 确认 GitHub Pages 设置中 Source 选择的是 **GitHub Actions**
+2. 等待 Actions 部署完成（通常需要 1-2 分钟）
+3. 检查 `base` 路径配置是否正确
+4. 查看仓库 Settings → Pages 中的部署日志
 
 ## 项目结构
 
@@ -103,6 +166,7 @@ macos-migrate/
 │   ├── .vitepress/           # VitePress 配置
 │   │   ├── config.ts         # 站点配置
 │   │   └── theme/            # 自定义主题
+│   ├── .nojekyll             # 禁用 Jekyll 处理
 │   ├── index.md              # 首页
 │   ├── quick-start.md        # 快速开始
 │   ├── official-tools.md     # 官方工具
@@ -114,6 +178,7 @@ macos-migrate/
 ├── scripts/                   # 备份和恢复脚本
 │   ├── backup.sh             # 备份脚本
 │   └── restore.sh            # 恢复脚本
+├── CNAME.example             # 自定义域名模板
 ├── package.json
 ├── tsconfig.json
 └── README.md
@@ -131,6 +196,7 @@ macos-migrate/
 - **TypeScript** - 类型安全
 - **Vite** - 快速的构建工具
 - **GitHub Actions** - 自动化部署
+- **Mermaid** - 流程图支持
 - **自定义 CSS** - 独特的视觉设计
 
 ## 浏览器支持

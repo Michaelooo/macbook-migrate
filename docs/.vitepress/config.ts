@@ -7,12 +7,19 @@ export default withMermaid({
   lang: 'zh-CN',
   base: '/macos-migrate/',
   head: [
-    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
-    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
+    // Google Fonts - 异步加载，带 font-display: swap
     ['link', {
-      rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=JetBrains+Mono:wght@400;500;600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap'
+      rel: 'preload',
+      as: 'style',
+      onload: "this.onload=null;this.rel='stylesheet'",
+      href: 'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap'
     }],
+    ['noscript', {}, [
+      ['link', {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap'
+      }]
+    ]],
     ['meta', { name: 'theme-color', content: '#f8f6f3' }],
     ['meta', { name: 'og:type', content: 'website' }],
     ['meta', { name: 'og:locale', content: 'zh_CN' }]
@@ -156,10 +163,15 @@ export default withMermaid({
   },
 
   vite: {
+    // 优化构建配置
+    build: {
+      cssCodeSplit: false
+    },
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: `@use "@theme/styles/variables" as *;`
+          // 移除可能导致问题的 SCSS 导入
+          // additionalData: `@use "@theme/styles/variables" as *;`
         }
       }
     }
