@@ -163,8 +163,6 @@ export default withMermaid({
   },
 
   vite: {
-    // GitHub Pages 部署到子目录需要配置 base
-    base: '/macos-migrate/',
     build: {
       cssCodeSplit: false
     }
