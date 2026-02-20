@@ -4,9 +4,10 @@
   "description": "macOS 开发环境迁移指南 - 现代化文档网站",
   "type": "module",
   "scripts": {
-    "dev": "vitepress dev docs",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
     "build": "vitepress build docs",
-    "preview": "vitepress preview docs",
     "type-check": "vue-tsc --noEmit"
   },
   "keywords": [
