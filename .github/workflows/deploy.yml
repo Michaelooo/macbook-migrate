@@ -31,11 +31,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
       - name: Build
-        run: npm run build
+        run: npm run build -- --base /macos-migrate/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
