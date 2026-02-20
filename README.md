@@ -16,7 +16,7 @@
 
 ## 在线预览
 
-完整文档：**[https://your-username.github.io/macos-migrate/](https://your-username.github.io/macos-migrate/)**
+完整文档：**[https://Michaelooo.github.io/macbook-migrate/](https://Michaelooo.github.io/macbook-migrate/)**
 
 ## 使用脚本
 
@@ -24,8 +24,8 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/your-username/macos-migrate.git
-cd macos-migrate
+git clone https://github.com/Michaelooo/macbook-migrate.git
+cd macbook-migrate
 
 # 运行备份脚本
 ./scripts/backup.sh
@@ -84,7 +84,7 @@ npm run preview
 3. **查看部署状态**
    - 进入仓库 **Actions** 标签页
    - 等待部署完成（约 1-2 分钟）
-   - 访问 `https://your-username.github.io/macos-migrate/`
+   - 访问 `https://Michaelooo.github.io/macbook-migrate/`
 
 ### 使用自定义域名
 
@@ -107,7 +107,7 @@ npm run preview
    - 在你的域名提供商添加 DNS 记录
    - 类型：CNAME
    - 主机记录：@ 或 www
-   - 目标：`your-username.github.io`
+   - 目标：`Michaelooo.github.io`
 
 ## 常见问题排查
 
@@ -119,7 +119,7 @@ npm run preview
 
 1. **检查 base 路径配置**
    - 确认 `docs/.vitepress/config.ts` 中的 `base` 配置正确
-   - GitHub Pages 项目：`base: '/macos-migrate/'`
+   - GitHub Pages 项目：`base: '/macbook-migrate/'`
    - 自定义域名：`base: '/'`
 
 2. **字体已配置降级策略**

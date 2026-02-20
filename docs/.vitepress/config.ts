@@ -5,7 +5,7 @@ export default withMermaid({
   title: 'macOS 开发环境迁移指南',
   description: '系统化、可复现的 macOS 开发环境迁移解决方案',
   lang: 'zh-CN',
-  base: '/macos-migrate/',
+  base: '/macbook-migrate/',
   head: [
     // Google Fonts - 异步加载，带 font-display: swap
     ['link', {
@@ -82,7 +82,7 @@ export default withMermaid({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/yourusername/macos-migrate' }
+      { icon: 'github', link: 'https://github.com/Michaelooo/macbook-migrate' }
     ],
 
     footer: {

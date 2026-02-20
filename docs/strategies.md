@@ -50,8 +50,8 @@
 
 ```bash
 # 1. 运行备份脚本
-git clone https://github.com/yourusername/macos-migrate.git
-cd macos-migrate
+git clone https://github.com/Michaelooo/macbook-migrate.git
+cd macbook-migrate
 ./scripts/backup.sh
 
 # 2. 验证备份
@@ -112,8 +112,8 @@ xcode-select --install
 
 ```bash
 # 1. 运行备份脚本
-git clone https://github.com/yourusername/macos-migrate.git
-cd macos-migrate
+git clone https://github.com/Michaelooo/macbook-migrate.git
+cd macbook-migrate
 ./scripts/backup.sh
 
 # 2. 验证备份

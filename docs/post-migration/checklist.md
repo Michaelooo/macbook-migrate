@@ -312,7 +312,7 @@ exec /bin/zsh
 
 ```bash
 # 将指南添加到浏览器书签
-# https://your-username.github.io/macos-migrate/
+# https://Michaelooo.github.io/macbook-migrate/
 ```
 
 ## 相关文档
